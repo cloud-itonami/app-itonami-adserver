@@ -1,0 +1,14 @@
+// Android/Tauri is a thin host. No network, shell, filesystem or profile-store commands.
+// External reads happen in the page through the canonical consent broker.
+#[tauri::command]
+fn awai_host_info() -> serde_json::Value {
+    serde_json::json!({"schema":"awai.shell.host.v1","app":"network.itonami.koukoku","external_operations":["murakumo-ads/read-inventory","murakumo-ads/read-free-status"]})
+}
+#[cfg_attr(mobile, tauri::mobile_entry_point)]
+pub fn run() {
+    tauri::Builder::default()
+        .runtime(tauri_runtime_wry::Wry::default())
+        .invoke_handler(tauri::generate_handler![awai_host_info])
+        .run(tauri::generate_context!())
+        .expect("Koukoku initialization failed");
+}

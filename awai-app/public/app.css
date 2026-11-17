@@ -1,0 +1,10 @@
+.app-header{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+.lead{margin:0}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:0}
+dd{margin:0;overflow-wrap:anywhere}
+#events{padding-left:1.2em;display:grid;gap:8px}
+#events p{margin:0;overflow-wrap:anywhere}
+.event-error{color:var(--awai-color-error,#b3261e)}
+[data-verdict="healthy"]{font-weight:600}
+[data-verdict="unhealthy"],[data-verdict="not-launched"]{font-weight:600;color:var(--awai-color-error,#b3261e)}

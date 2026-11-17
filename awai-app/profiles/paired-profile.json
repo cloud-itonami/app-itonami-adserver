@@ -1,0 +1,31 @@
+{
+  "schema": "awai.koukoku.paired-profile.v1",
+  "provenance": {
+    "repository": "network-awai/app-itonami-adserver",
+    "path": "hermes/profiles/murakumo-adnetwork/",
+    "revision": "aeb5f9bffa5242a723862ebfc6e4e9bd00d4bf6d",
+    "transformation": "profile.yaml and itonami.edn copied verbatim as text; cron jobs reduced to name, schedule display and enabled; sha256 of each source file recorded",
+    "sources": {
+      "profile.yaml": "4a817a6947e1077ff7a10976773261f9230613325ba4e29a8837a02d72d7a869",
+      "itonami.edn": "529f3ba3c7b6e24493956bbe4b296689b20bcaaaa6dd21cb61ef935113e16fa8",
+      "cron/jobs.json": "21e627d6dee01b8c1b5233f3bdb8cb5ac57f9e273909ab989155368fbb888975"
+    }
+  },
+  "profile": {
+    "id": "murakumo-adnetwork",
+    "profile.yaml": "description: 'murakumo.cloud ad network surface driver: measure the first-party ad network (adnet auction, /advertise intake, ads MCP, ad-funded free lane, x402 SDK) and propose one bounded improvement per tick. propose-only.'\ndescription_auto: false\n",
+    "itonami.edn": ";; Kotoba owns the agent and cron scheduler for this profile after adoption.\n{:profile/id \"murakumo-adnetwork\"\n :profile/hermes-compatible true\n :runtime {:engine :itonami-agent\n           :scheduler :itonami}\n :itonami/schema \"cloud.itonami.profile.v1\"\n :cron? true}\n",
+    "cron": [
+      {
+        "name": "murakumo-adnetwork-tick",
+        "schedule": "50 21 * * *",
+        "enabled": true
+      },
+      {
+        "name": "mithril advertiser-acquisition decision",
+        "schedule": "every 360m",
+        "enabled": true
+      }
+    ]
+  }
+}

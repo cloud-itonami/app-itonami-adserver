@@ -37,6 +37,14 @@ GET  /health
 
 `ADNET_TREASURY_ADDR` (advertiser USDC deposits) via `wrangler secret`.
 
+## Awai app (Koukoku)
+
+[`awai-app/`](awai-app/README.md) is the Awai app paired one-to-one with the
+`murakumo-adnetwork` bot profile: a Tauri v3 app (Android first) that reads
+murakumo.cloud's public ad inventory and free-tier funding, each read behind
+its own consent, and shows a fail-closed funding verdict. It is read-only and
+separate from this Worker. Tracking: AWAI-3260.
+
 ## Dev
 
 ```bash
