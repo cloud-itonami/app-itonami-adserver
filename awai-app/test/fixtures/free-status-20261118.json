@@ -1,0 +1,1 @@
+{"sponsored":true,"impressionsPerUnit":null,"advertiserFunded":0,"flow":["POST /api/v1/free/impression","POST /api/v1/free/view","POST /api/v1/free/chat/completions"],"storeReady":true,"sponsoredBy":"murakumo house sponsorship","dailyUnitCap":5,"unitPriceMicros":10000,"policyProblem":null,"available":true,"placement":"free-tier","fundingSource":"house-sponsorship"}
