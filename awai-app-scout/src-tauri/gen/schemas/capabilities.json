@@ -1,0 +1,1 @@
+{"itonami-koukoku-scout-local":{"identifier":"itonami-koukoku-scout-local","description":"Read-only host identity only. No network, shell, filesystem, profile store or model credentials.","local":true,"windows":["main"],"permissions":["allow-awai-host-info"]}}

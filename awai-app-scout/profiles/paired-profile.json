@@ -1,0 +1,42 @@
+{
+  "schema": "awai.koukoku-scout.paired-profile.v1",
+  "provenance": {
+    "repository": "network-awai/app-itonami-adserver",
+    "path": "hermes/profiles/adnetwork-scout/",
+    "revision": "f5b8883067ccbc7a8d9fec056a9633b7d57af9b4",
+    "transformation": "profile.yaml and itonami.edn copied verbatim as text; from SOUL.md only the sentences stating its limits, cut at the sentence end; cron jobs reduced to name, schedule display and enabled; sha256 of each source file recorded",
+    "sources": {
+      "profile.yaml": "2d4c919f48e0cb04942472832ab8ed00f66f7634ef2737f1edc83558c867f454",
+      "itonami.edn": "0400571187ba6704791e6fdbf4361cbc71bc657e7ad7cd97f3666a3bad9e1030",
+      "SOUL.md": "fdf976465a0bfba8fa68c561c8097f5ea0587dacad16233ac64b6fe9b3fd4379",
+      "cron/jobs.json": "58e8f9d9ae216a8aedc56d2edd13dca5b99b16631693b69b13dbde37d0439e73"
+    }
+  },
+  "profile": {
+    "id": "adnetwork-scout",
+    "profile.yaml": "description: adnetwork 広告主情報を収集して Cloudflare R2 data catalog (Iceberg) に保存する bot\ndescription_auto: false\n",
+    "itonami.edn": ";; Kotoba owns the agent and cron scheduler for this profile after adoption.\n{:profile/id \"adnetwork-scout\"\n :profile/hermes-compatible true\n :runtime {:engine :itonami-agent\n           :scheduler :itonami}\n :itonami/schema \"cloud.itonami.profile.v1\"\n :cron? true}\n",
+    "authority": [
+      "- Never write credentials anywhere; the sync script reads the Keychain itself.",
+      "- Do not touch other tables or namespaces in the catalog.",
+      "Propose only: nothing is ever sent, no credentials, no other tables."
+    ],
+    "cron": [
+      {
+        "name": "adnetwork-scout-collect",
+        "schedule": "40 21 * * *",
+        "enabled": true
+      },
+      {
+        "name": "adnetwork-scout-outreach",
+        "schedule": "40 22 * * *",
+        "enabled": true
+      },
+      {
+        "name": "[mithril:adnetwork-scout] Mithril cron smoke 20260922",
+        "schedule": "every 1m",
+        "enabled": false
+      }
+    ]
+  }
+}
