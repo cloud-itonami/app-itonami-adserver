@@ -45,6 +45,15 @@ murakumo.cloud's public ad inventory and free-tier funding, each read behind
 its own consent, and shows a fail-closed funding verdict. It is read-only and
 separate from this Worker. Tracking: AWAI-3260.
 
+## Awai app (Koukoku Scout) and the scout export
+
+[`awai-app-scout/`](awai-app-scout/README.md) is the Awai app paired with the
+`adnetwork-scout` bot profile. It reads the bot's static public export
+([`public/adnetwork-scout/`](public/adnetwork-scout/README.md), written by
+`scripts/adnetwork_public_export.py`) behind its own consent. It is read-only.
+The export is not published yet (catalog token 403 on 2026-11-18).
+Tracking: AWAI-3335.
+
 ## Dev
 
 ```bash
