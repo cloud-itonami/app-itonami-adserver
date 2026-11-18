@@ -38,7 +38,8 @@ Android needs SDK 35+, NDK 27.0.12077973 and JDK 21, with `ANDROID_HOME`, `NDK_H
 
 ```sh
 npm run build:android        # arm64 debug APK
-npm run build:android:x86    # x86_64 debug APK
+npm run build:android:x86    # x86_64 debug APK (in a fresh checkout the first Android build can fail on
+                             # 'PluginManager'; Tauri generates tauri.settings.gradle during it — run it again)
 ```
 
 The APK is a debug test artifact. It is not a signed production or OTA release, and it is not enrolled in Itonami Store.
