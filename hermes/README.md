@@ -26,3 +26,14 @@ sessions, memories, logs, caches, run state.
 | `adsk` | adsk: adult ad-creative generation bot using murakumo.cloud image/video |
 | `adska` | adska: adult ad-operations bot. Campaign plans, budgets, placement compliance, |
 | `murakumo-adnetwork` | murakumo.cloud ad network surface driver: measure the first-party ad network (adnet auction, /advertise intake, ads MCP, ad-funded free lane, x402 SDK) and prop |
+
+## Inference rail
+
+These are Hermes agents. They never name murakumo or mishima — not in `model`,
+`providers`, `fallback_providers` or a cron `model`/`provider` pin
+(itonami-agent AGENTS.md "Two CLIs"; AWAI-3303). Their default is OpenRouter
+(`xiaomi/mimo-v2.6-pro`); other providers (openrouter-free, kotoba) stay as
+they are. Inference on Murakumo / mishima belongs to itonami agent profiles.
+
+The change is to these definitions only. A host profile is updated when it is
+materialized from here, which needs its own operator step.
